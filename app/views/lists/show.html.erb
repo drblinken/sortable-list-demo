@@ -11,11 +11,17 @@
       <% end %>
     </div>
 
-    <script>
+    <div id = "status">Status will be shown here.</div>
 
+
+    <script>
     Sortable.create(orderedList, {
       onEnd: function (evt) {
-        alert("Dragged "+evt.oldIndex+" to "+evt.newIndex)
+         var params = {"from": evt.oldIndex, "to": evt.newIndex};
+             $.get('<%= reorder_list_path(@list) %>', params,
+              function(data){
+                 data;
+              });
           },
          }
       );

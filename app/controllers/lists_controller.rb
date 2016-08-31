@@ -1,6 +1,11 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :reorder]
 
+  def reorder
+    @from = params[:from]
+    @to = params[:to]
+    @list.reorder(from: @from, to: @to)
+  end
   # GET /lists
   # GET /lists.json
   def index
