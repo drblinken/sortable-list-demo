@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Item.delete_all
+List.delete_all
+items = (1..10).to_a.map { |n|
+  [n, Item.create(label: "Item #{n}") ]}
+
+list = List.create(header: "My ordered list")
+
+items.each do | n, i|
+  list.positions.create(item: i, position: n)
+end
