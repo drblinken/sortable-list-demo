@@ -1,9 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Header:</strong>
-  <%= @list.header %>
-</p>
+<h1><%= @list.header %></h1>
 
+<!-- Latest Sortable
+<script src="http://rubaxa.github.io/Sortable/Sortable.js"></script> -->
+
+    <div id="orderedList" class="list-group">
+      <% @items.each do |item| %>
+        <div class="list-group-item"><%= item.label %></div>
+      <% end %>
+    </div>
+
+    <script>
+
+    Sortable.create(orderedList, {
+      onEnd: function (evt) {
+        alert("Dragged "+evt.oldIndex+" to "+evt.newIndex)
+          },
+         }
+      );
+     </script>
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
