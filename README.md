@@ -1,24 +1,22 @@
-# README
+# Sortable-List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a demo/tryout to use RubaXa's Sortable library 
+https://github.com/RubaXa/Sortable together with Rails 5.
 
-Things you may want to cover:
+Instead of using the acts_as_list gem, I wanted the
+position to be stored outside the items like this,
+creating the associations using has_many :through 
+(see http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association )
 
-* Ruby version
+__________          ______________         __________
+| List   |          | Position   |         | Item   |     
+|        |          |            |         |        |     
+| header |          | item_id    |         | label  |     
+|        |          | list_id    |         |        |     
+|        |          | position   |         |        |     
+__________          ______________         __________     
+                
+				
+## Steps
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- include sortable-rails gem in Gemfile  https://github.com/otaq/sortable-rails/ 
