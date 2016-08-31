@@ -2,9 +2,9 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy, :reorder]
 
   def reorder
-    @from = params[:from]
-    @to = params[:to]
-    @list.reorder(from: @from, to: @to)
+    @from = params[:from].to_i
+    @to = params[:to].to_i
+    @list.reorder( @from,  @to)
   end
   # GET /lists
   # GET /lists.json
@@ -15,7 +15,9 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
-    @items = @list.items
+    @positions = @list.positions
+    #@items = @list.items
+    @items = @positions.map {|p| [p,p.item]}
   end
 
   # GET /lists/new

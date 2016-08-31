@@ -5,3 +5,15 @@ one:
 
 two:
   label: MyString
+
+item_1:
+  label: Item 1
+
+item_2:
+  label: Item 2
+
+item_3:
+  label: Item 3
+
+item_4:
+  label: Item 4

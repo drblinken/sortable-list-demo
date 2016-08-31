@@ -19,7 +19,7 @@ __________          ______________         __________
 
 ## Steps
 
-- created the list in app/views/show.html.erb
+- created the list in app/views/show.html.erbs
 - added bootstrap-sass gem as described in https://github.com/twbs/bootstrap-sass
 - downloaded Sortable.js from https://github.com/RubaXa/Sortable to vendor/assets/javascripts and included it in application.js (version 1.3.0)
 

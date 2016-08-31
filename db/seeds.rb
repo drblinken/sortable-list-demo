@@ -13,5 +13,5 @@ items = (1..10).to_a.map { |n|
 list = List.create(header: "My ordered list")
 
 items.each do | n, i|
-  list.positions.create(item: i, position: n)
+  list.add(i)
 end

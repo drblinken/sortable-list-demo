@@ -6,8 +6,8 @@
 <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script> -->
 
     <div id="orderedList" class="list-group">
-      <% @items.each do |item| %>
-        <div class="list-group-item"><%= item.label %></div>
+      <% @items.each do | position,item | %>
+        <div class="list-group-item"><%= item.label %> (pos: <%= position.position %>)</div>
       <% end %>
     </div>
 

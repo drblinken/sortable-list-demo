@@ -9,3 +9,20 @@ two:
   item: two
   list: two
   position: 1
+
+p4:
+  item: item_4
+  list: reorder_list
+  position: 3
+p1:
+  item: item_1
+  list: reorder_list
+  position: 0
+p2:
+  item: item_2
+  list: reorder_list
+  position: 1
+p3:
+  item: item_3
+  list: reorder_list
+  position: 2
