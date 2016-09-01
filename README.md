@@ -22,7 +22,9 @@ __________          ______________         __________
 - created the list in app/views/show.html.erbs
 - added bootstrap-sass gem as described in https://github.com/twbs/bootstrap-sass
 - downloaded Sortable.js from https://github.com/RubaXa/Sortable to vendor/assets/javascripts and included it in application.js (version 1.3.0)
-
+- added ajax call in app/views/show.html.erbs
+- added reorder action in list controller
+- implemented the reorder functionality just as needed in the list model
 
 ## Learnings/Things that didn't work
 - include sortable-rails gem in Gemfile  https://github.com/otaq/sortable-rails/ -

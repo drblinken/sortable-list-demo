@@ -2,9 +2,9 @@
 
 <h1><%= @list.header %></h1>
 
-<!-- Latest Sortable
-<script src="http://rubaxa.github.io/Sortable/Sortable.js"></script> -->
-
+<div class = "sort_mode">Click here to start/stop sorting:
+  <button id = "sort_toggle" onClick = "toggle_sorting()">Start Reordering<button/>
+  </div>
     <div id="orderedList" class="list-group">
       <% @items.each do | position,item | %>
         <div class="list-group-item"><%= item.label %> (pos: <%= position.position %>)</div>
@@ -13,9 +13,9 @@
 
     <div id = "status">Status will be shown here.</div>
 
-
     <script>
-    Sortable.create(orderedList, {
+    var sortable = Sortable.create(orderedList, {
+      disabled: true,
       onEnd: function (evt) {
          var params = {"from": evt.oldIndex, "to": evt.newIndex};
              $.get('<%= reorder_list_path(@list) %>', params,
@@ -25,6 +25,15 @@
           },
          }
       );
+    var sorting = false;
+
+    function toggle_sorting(){
+      sorting = !sorting;
+      button_text = sorting ? "Stop" : "Start";
+      button_text += " Reordering";
+      $('#sort_toggle').text(button_text);
+      sortable.option("disabled", !sorting);
+    }
      </script>
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
